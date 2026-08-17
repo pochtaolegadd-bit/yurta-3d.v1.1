@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Юрта — 3D-сайт</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <nav class="side-nav" aria-label="Основная навигация">
+      <button
+        type="button"
+        class="nav-item is-active"
+        data-page="home"
+        title="Главная — 3D-сайт с юртой"
+        aria-label="Главная — 3D-сайт с юртой"
+      >
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span class="nav-label">Главная</span>
+      </button>
+
+      <button
+        type="button"
+        class="nav-item"
+        data-page="presentation"
+        title="Презентация — текстовая презентация проекта"
+        aria-label="Презентация — текстовая презентация проекта"
+      >
+        <span class="nav-icon" aria-hidden="true">📄</span>
+        <span class="nav-label">Презентация</span>
+      </button>
+
+      <button
+        type="button"
+        class="nav-item"
+        data-page="video"
+        title="Видео — видео-презентация"
+        aria-label="Видео — видео-презентация"
+      >
+        <span class="nav-icon" aria-hidden="true">🎥</span>
+        <span class="nav-label">Видео</span>
+      </button>
+
+      <button
+        type="button"
+        class="nav-item"
+        data-page="materials"
+        title="Материалы — подробное описание материалов юрты"
+        aria-label="Материалы — подробное описание материалов юрты"
+      >
+        <span class="nav-icon" aria-hidden="true">🧱</span>
+        <span class="nav-label">Материалы</span>
+      </button>
+
+      <button
+        type="button"
+        class="nav-item"
+        data-page="calculator"
+        title="Калькулятор — расчёт стоимости"
+        aria-label="Калькулятор — расчёт стоимости"
+      >
+        <span class="nav-icon" aria-hidden="true">🧮</span>
+        <span class="nav-label">Калькулятор</span>
+      </button>
+
+      <button
+        type="button"
+        class="nav-item"
+        data-page="gallery"
+        title="Галерея — фотографии проекта"
+        aria-label="Галерея — фотографии проекта"
+      >
+        <span class="nav-icon" aria-hidden="true">🖼</span>
+        <span class="nav-label">Галерея</span>
+      </button>
+    </nav>
+
+    <main class="pages">
+      <section id="page-home" class="page is-active" data-page="home" aria-label="Главная">
+        <div id="scene-root"></div>
+        <p class="scene-hint scene-hint--desktop">
+          Клик по сцене — обзор мышью · WASD — движение
+        </p>
+        <p class="scene-hint scene-hint--mobile">
+          Слева — движение · свайп по экрану — обзор
+        </p>
+        <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+          <div class="joy" id="joy-move">
+            <div class="joy-knob" id="joy-knob"></div>
+          </div>
+          <div class="mobile-vert">
+            <button type="button" id="btn-cam-up" aria-label="Вверх">↑</button>
+            <button type="button" id="btn-cam-down" aria-label="Вниз">↓</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-presentation" class="page" data-page="presentation" hidden>
+        <article class="page-content">
+          <h1>Презентация проекта</h1>
+          <p>
+            Здесь будет текстовая презентация юрты: идея, конструкция,
+            преимущества и сценарии использования.
+          </p>
+        </article>
+      </section>
+
+      <section id="page-video" class="page" data-page="video" hidden>
+        <article class="page-content page-content--wide">
+          <h1>Видео-презентация</h1>
+          <p>Презентация проекта юрты для защиты.</p>
+          <div class="video-wrap">
+            <video
+              id="project-video"
+              controls
+              controlsList="nodownload noplaybackrate"
+              disablePictureInPicture
+              playsinline
+              preload="metadata"
+              src="/presentation.mp4"
+              oncontextmenu="return false;"
+            >
+              Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+          </div>
+        </article>
+      </section>
+
+      <section id="page-materials" class="page" data-page="materials" hidden>
+        <article class="page-content">
+          <h1>Материалы юрты</h1>
+          <p>
+            Подробное описание каркаса, покрытия, утеплителя и фурнитуры —
+            раздел будет заполнен позже.
+          </p>
+        </article>
+      </section>
+
+      <section id="page-calculator" class="page" data-page="calculator" hidden>
+        <article class="page-content page-content--calc">
+          <div id="calculator-root"></div>
+        </article>
+      </section>
+
+      <section id="page-gallery" class="page" data-page="gallery" hidden>
+        <article class="page-content">
+          <h1>Галерея</h1>
+          <p>Фотографии проекта появятся в этом разделе.</p>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
